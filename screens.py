@@ -3,7 +3,6 @@ import pygame
 from sprites import Star, MainHero, VipStar, SuperStar
 from functions import load_image, show_score, show_misses
 import functions
-import time
 
 
 LEVEL = 1

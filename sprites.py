@@ -1,5 +1,4 @@
 import random
-
 import pygame
 from functions import load_image, show_score, show_misses
 
@@ -99,23 +98,6 @@ class MainHero(pygame.sprite.Sprite):
         numbers = range(-20, 20)
         for _ in range(20):
             Particle([self.rect.x + 35, self.rect.y + 35], random.choice(numbers), random.choice(numbers), (self.rect.x - 50, self.rect.y - 50, self.rect.w + 100, self.rect.h + 100),*group)
-
-
-class Fires(pygame.sprite.Sprite):
-    def __init__(self, pos, x, y, *group):
-        super().__init__(*group)
-        self.image = pygame.transform.scale(load_image('fire.png'), (10, 10))
-        self.rect = self.image.get_rect()
-        self.rect.x = pos[0]
-        self.rect.y = pos[1]
-        self.mask = pygame.mask.from_surface(self.image)
-        self.move_x, self.move_y = x, y
-
-    def update(self, screen):
-        if not self.rect.colliderect(show_score(screen)[1]):
-            self.kill()
-        else:
-            self.rect = self.rect.move(0, 1)
 
 
 class Particle(pygame.sprite.Sprite):
