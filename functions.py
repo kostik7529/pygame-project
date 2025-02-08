@@ -67,3 +67,7 @@ def show_misses(screen, missed=None):
     misses_rect.top = 10
     misses_rect.x = 10
     screen.blit(misses, misses_rect)
+
+def sound():
+    pygame.mixer.music.load('data/sound.wav')
+    pygame.mixer.music.play()

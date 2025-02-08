@@ -1,6 +1,6 @@
 import random
 import pygame
-from functions import load_image, show_score, show_misses
+from functions import load_image, show_score, show_misses, sound
 
 
 fires = pygame.sprite.Group()
@@ -28,6 +28,7 @@ class Star(pygame.sprite.Sprite):
             self.kill()
             show_score(screen, 1, False)
             show_misses(screen, False)
+            sound()
 
 
 class VipStar(Star):
@@ -51,6 +52,7 @@ class VipStar(Star):
                 self.kill()
                 show_score(screen, 5, False)
                 show_misses(screen, False)
+                sound()
 
 
 class SuperStar(Star):
@@ -74,6 +76,7 @@ class SuperStar(Star):
                 self.kill()
                 show_score(screen, 15, False)
                 show_misses(screen, False)
+                sound()
 
 
 class MainHero(pygame.sprite.Sprite):
