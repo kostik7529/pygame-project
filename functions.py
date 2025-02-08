@@ -69,5 +69,5 @@ def show_misses(screen, missed=None):
     screen.blit(misses, misses_rect)
 
 def sound():
-    pygame.mixer.music.load('data/sound.wav')
+    pygame.mixer.music.load('sounds/sound.wav')
     pygame.mixer.music.play()
